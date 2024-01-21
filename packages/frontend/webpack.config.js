@@ -31,7 +31,9 @@ module.exports = async () => {
     return ({
         devServer: {
             historyApiFallback: true,
-            hot: true
+            hot: true,
+            open: true,
+            port: 3000
         },
         entry,
         mode: NODE_ENV,
@@ -52,7 +54,12 @@ module.exports = async () => {
                                         }
                                     }
                                 ],
-                                '@babel/preset-react'
+                                [
+                                    '@babel/preset-react',
+                                    {
+                                        runtime: 'automatic'
+                                    }
+                                ]
                             ],
                             sourceType: 'unambiguous'
                         }
@@ -62,14 +69,7 @@ module.exports = async () => {
                     test: /\.scss$/i,
                     use: [
                         'style-loader',
-                        {
-                            loader: 'css-loader',
-                            options: {
-                                modules: {
-                                    auto: /^.*(colors|units).scss$/
-                                }
-                            }
-                        },
+                        'css-loader',
                         'postcss-loader',
                         'sass-loader'
                     ]
