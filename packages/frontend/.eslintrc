@@ -114,8 +114,8 @@
             "error",
             {
                 "extensions": [
-                    ".ts",
-                    ".tsx"
+                    ".js",
+                    ".jsx"
                 ]
             }
         ],

@@ -41,5 +41,8 @@
         "less",
         "postcss",
         "scss"
+    ],
+    "cSpell.words": [
+        "Ramina's"
     ]
 }
