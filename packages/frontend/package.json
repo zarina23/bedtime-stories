@@ -44,15 +44,12 @@
     "*.js": [
       "eslint --fix"
     ],
+    "*.jsx": [
+      "eslint --fix"
+    ],
     "*.scss": [
       "prettier --write",
       "stylelint --fix"
-    ],
-    "*.ts": [
-      "eslint --fix"
-    ],
-    "*.tsx": [
-      "eslint --fix"
     ]
   },
   "main": "index.js",
