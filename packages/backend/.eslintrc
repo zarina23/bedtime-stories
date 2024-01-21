@@ -1,0 +1,83 @@
+{
+  "env": {
+    "es2024": true,
+    "node": true
+  },
+  "extends": [
+    "../../.eslintrc.js"
+  ],
+  "rules": {
+    "class-methods-use-this": [
+      0
+    ],
+    "import/extensions": [
+      0
+    ],
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "caseInsensitive": true,
+          "order": "asc",
+          "orderImportKind": "asc"
+        },
+        "groups": [
+          "external",
+          "builtin",
+          "parent"
+        ],
+        "newlines-between": "always",
+        "pathGroups": [
+          {
+            "group": "parent",
+            "pattern": "@controllers/*",
+            "position": "after"
+          },
+          {
+            "group": "parent",
+            "pattern": "@models/*",
+            "position": "after"
+          },
+          {
+            "group": "parent",
+            "pattern": "@services/*",
+            "position": "after"
+          },
+          {
+            "group": "parent",
+            "pattern": "@utils/*",
+            "position": "after"
+          },
+          {
+            "group": "parent",
+            "pattern": "@middleware/*",
+            "position": "after"
+          },
+          {
+            "group": "parent",
+            "pattern": "./logger",
+            "position": "after"
+          },
+          {
+            "group": "parent",
+            "pattern": "./db",
+            "position": "after"
+          },
+          {
+            "group": "parent",
+            "pattern": "@types",
+            "position": "after"
+          },
+          {
+            "group": "parent",
+            "pattern": "@constants",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": [
+          "builtin"
+        ]
+      }
+    ]
+  }
+}

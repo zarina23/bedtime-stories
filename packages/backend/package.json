@@ -1,0 +1,36 @@
+{
+  "author": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "helmet": "^7.1.0",
+    "openai": "^4.25.0"
+  },
+  "description": "",
+  "devDependencies": {
+    "node-gyp": "^10.0.1",
+    "nodemon": "^3.0.3",
+    "onchange": "^7.1.0"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix"
+    ]
+  },
+  "main": "index.js",
+  "name": "backend",
+  "scripts": {
+    "build": "",
+    "config:local": "cross-env NODE_ENV=development",
+    "develop": "npm run config:local concurrently --raw \"nodemon src/index.js\" \"npm:watch --silent\"",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix",
+    "pre-commit": "cross-env FORCE_COLOR=true lint-staged",
+    "start": "npm run develop",
+    "watch": "onchange --delay 500 \"src/**/*.js\" -- npm run lint --silent"
+  },
+  "type": "module",
+  "version": "1.0.0"
+}

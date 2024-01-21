@@ -1,25 +1,47 @@
 {
-  "name": "raminas-tales",
-  "version": "1.0.0",
+  "author": "Zarina Urazgaleyeva",
+  "bugs": {
+    "url": "https://github.com/zarina23/raminas-tales/issues"
+  },
   "description": "Bedtime tales",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-sort-destructure-keys": "^1.5.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zarina23/raminas-tales.git"
-  },
+  "homepage": "https://github.com/zarina23/raminas-tales#readme",
   "keywords": [
     "ai",
     "tales",
     "bedtime",
     "story"
   ],
-  "author": "Zarina Urazgaleyeva",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/zarina23/raminas-tales/issues"
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix"
+    ]
   },
-  "homepage": "https://github.com/zarina23/raminas-tales#readme"
+  "main": "index.js",
+  "name": "raminas-tales",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zarina23/raminas-tales.git"
+  },
+  "scripts": {
+    "develop": "concurrently --raw \"npm start -w frontend\" \"npm start -w backend\"",
+    "lint": "eslint ./*.js ./scripts/*.js && npm run lint --workspaces",
+    "lint:fix": "eslint ./*.js ./scripts/*.js --fix && npm run lint:fix --workspaces",
+    "pre-commit": "cross-env FORCE_COLOR=true lint-staged && npm run pre-commit --workspaces",
+    "prepare": "husky install",
+    "start": "npm run develop"
+  },
+  "version": "1.0.0",
+  "workspaces": [
+    "./packages/*"
+  ]
 }

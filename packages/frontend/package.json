@@ -1,0 +1,15 @@
+{
+  "author": "",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "frontend",
+  "scripts": {
+    "pre-commit": ""
+  },
+  "version": "1.0.0"
+}
